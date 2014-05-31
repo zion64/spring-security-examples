@@ -2,23 +2,38 @@
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
-    <appender name="console" class="org.apache.log4j.ConsoleAppender">
-        <param name="Target" value="System.out" />
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%d [%t] %-5p %c - %m%n" />
-        </layout>
-    </appender>
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[SPRING-SECURITY] %d{yyyy-MM-dd,HH:mm:ss} [%l] [%t]\n %-5p %c - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="calendar" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="../logs/calendar.log" />
+		<param name="MaxFileSize" value="512000KB" />
+		<param name="MaxBackupIndex" value="3" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%-5p] %d{yyyy-MM-dd,HH:mm:ss} [%l]\n%m%n\n" />
+		</layout>
+	</appender>
+
+	<logger name="org.jasig" additivity="true">
+		<level value="TRACE" />
+	</logger>
+
+	<logger name="com.example.springsecurity" additivity="true">
+		<level value="TRACE" />
+	</logger>
+
+	<category name="org.springframework.security">
+		<priority value="TRACE" />
+	</category>
 
 
-    <logger name="org.jasig" additivity="true">
-        <level value="DEBUG" />
-    </logger>
-    <category name="org.springframework.security">
-        <priority value="DEBUG" />
-    </category>
-
-    <root>
-        <priority value="WARN" />
-        <appender-ref ref="console" />
-    </root>
+	<root>
+		<priority value="TRACE" />
+		<appender-ref ref="console" />
+		<appender-ref ref="calendar" />
+	</root>
 </log4j:configuration>

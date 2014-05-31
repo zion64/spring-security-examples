@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.5.1.201404300732-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[true]]></enableImports>
+	<configs>
+		<config>java:com.example.springsecurity.service.UserContextStub</config>
+		<config>java:com.example.springsecurity.web.config.WebMvcConfig</config>
+	</configs>
+	<autoconfigs>
+		<config>src/main/webapp/WEB-INF/mvc-config.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/security.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/i18n.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/security-cas.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/services.xml</config>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

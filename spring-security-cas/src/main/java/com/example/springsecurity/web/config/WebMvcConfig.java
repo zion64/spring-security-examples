@@ -6,6 +6,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -71,7 +73,7 @@ import org.springframework.web.servlet.view.json.MappingJacksonJsonView;
 @Configuration
 @EnableWebMvc
 public class WebMvcConfig extends WebMvcConfigurationSupport {
-
+	private static final Logger logger = LoggerFactory.getLogger(WebMvcConfig.class);
     /**
      * We mention this in the book, but this helps to ensure that the intercept-url patterns prevent access to our
      * controllers. For example, once security has been applied for administrators try commenting out the modifications
@@ -91,6 +93,7 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
 
     @Override
     protected void addResourceHandlers(ResourceHandlerRegistry registry) {
+    	logger.info("resources를 추가하는 중.......===============================================");
         registry.addResourceHandler("/resources/**").addResourceLocations("/resources/").setCachePeriod(31556926);
     }
 

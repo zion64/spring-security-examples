@@ -105,7 +105,7 @@
     </repositories>
 
     <properties>
-        <cas.version>3.4.11</cas.version>
+        <cas.version>3.5.2.1</cas.version>
         <m2eclipse.wtp.contextRoot>cas</m2eclipse.wtp.contextRoot>
         <spring.security.version>3.0.5.RELEASE</spring.security.version>
     </properties>
